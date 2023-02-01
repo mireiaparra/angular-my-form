@@ -1,0 +1,33 @@
+<h1>Contact form</h1>
+<pre>{{ contactForm.value | json }}</pre>
+<form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+   <div class="mg-4">
+    <label for="name" class="form-label">Name</label>
+    <input type="text" class="form-control" id="name" required [(ngModel)]="model.name"  #name="ngModel" name="name">
+    <div [hidden]="name.valid || name.pristine" class="alert alert-danger">This field is required</div>
+   </div>
+   <div class="mg-4 form-check">
+    <label for="checkAdult" class="form-label">Are you over 18 years of age?</label>
+    <input type="checkbox" class="form-check-input" id="checkAdult" name="age" [(ngModel)]="model.age" #age="ngModel" required>
+    <div [hidden]="age.valid || age.pristine" class="alert alert-danger">This field is required</div>
+   </div>
+   <div class="mg-4">
+    <label for="name" class="form-label">Department</label>
+    <select name="department" id="department" class="form-select form-select-sm" [(ngModel)]="model.department" #department="ngModel">
+    <option selected>Open this select menu</option>
+    <option value="marketing">Marketing</option>
+    <option value="sales">Sales</option>
+    <option value="other">Other</option>
+    </select>
+    <div [hidden]="department.valid || department.pristine" class="alert alert-danger">This field is required</div>
+   </div>
+   <div class="mg-4">
+    <label for="comment" class="form-label">Comment</label>
+    <textarea name="comment" id="comment" rows="4" placeholder="Leave a comment..." class="form-control" [(ngModel)]="model.comment" #comment="ngModel" required></textarea>
+    <div [hidden]="comment.valid || comment.pristine" class="alert alert-danger">This field is required</div>
+   </div>
+   <div class="float-end d-grid gap-2 col-4">
+    <button type="submit" class="btn btn-info btn-lg" [disabled]="contactForm.invalid">Send</button>
+   </div>
+</form>
+

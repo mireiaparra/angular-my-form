@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-form';
-  name:string = "Mireia"
+  name!:string;
+  cities = ["Sevilla", "Córdoba", "Huelva"];
 }

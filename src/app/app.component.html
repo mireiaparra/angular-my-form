@@ -4,11 +4,14 @@
       <p *ngIf="name">El nombre es: {{name}}</p>
       <input type="text" [(ngModel)]="name">
       <ul *ngFor="let city of cities">
-        <li [ngClass]="{'selected': city === 'Sevilla'}">{{city}}</li>
+        <li (click)="onCityClicked(city)" [ngClass]="{'selected': city === selection}">{{city}}</li>
       </ul>
       <app-contact-reactive></app-contact-reactive>
       <app-button></app-button>
     </div>
-    <div class="col-6"></div>
+   <div *ngIf="selection">
+     <p>Your city is: {{selection}}</p>
+     <button (click)="onClear()">Clear</button>
+   </div>
   </div>
 </div>

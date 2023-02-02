@@ -11,10 +11,11 @@ export class AppComponent {
   cities = ["Sevilla", "Córdoba", "Huelva"];
   selection!:string;
 
-
+addNewCity(city: string): void {
+  this.cities.push(city);
+}
 
   onCityClicked(city:string):void {
-    console.log('City', city);
     this.selection = city;
   }
 

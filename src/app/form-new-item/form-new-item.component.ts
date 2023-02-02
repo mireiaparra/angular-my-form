@@ -13,7 +13,6 @@ export class FormNewItemComponent {
 @Output() newItemEvent = new EventEmitter<string>();
 
 onAddNewItem(item: string): void {
-  console.log('Item', item);
   this.newItemEvent.emit(item);
 }
 }

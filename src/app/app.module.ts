@@ -7,6 +7,8 @@ import { ContactComponent } from './contact/contact.component';
 import { ContactReactiveComponent } from './contact-reactive/contact-reactive.component';
 import { ButtonComponent } from './button/button.component';
 import { FormNewItemComponent } from './form-new-item/form-new-item.component';
+import { CitiesComponent } from './cities/cities.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,12 +16,14 @@ import { FormNewItemComponent } from './form-new-item/form-new-item.component';
     ContactComponent,
     ContactReactiveComponent,
     ButtonComponent,
-    FormNewItemComponent
+    FormNewItemComponent,
+    CitiesComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

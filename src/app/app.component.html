@@ -6,12 +6,13 @@
       <ul *ngFor="let city of cities">
         <li (click)="onCityClicked(city)" [ngClass]="{'selected': city === selection}">{{city}}</li>
       </ul>
+      <div *ngIf="selection">
+        <p>Your city is: {{selection}}</p>
+        <!-- <button (click)="onClear()">Clear</button> -->
+        <app-button (click)="onClear()" [color]="'blue'" [label]="'Clear'"></app-button>
+        <!-- <app-button (click)="onClear()" [color]="'red'" [label]="'Soy rojo'"></app-button> -->
+      </div>
       <app-contact-reactive></app-contact-reactive>
-      <app-button></app-button>
     </div>
-   <div *ngIf="selection">
-     <p>Your city is: {{selection}}</p>
-     <button (click)="onClear()">Clear</button>
-   </div>
   </div>
 </div>
